@@ -2,24 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>dataJS</title>
+    <title>users</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
   </head>
   <body>
-    <h1>USER DIRECTORY</h1>
-
-    <div class="array">
+    <div class="bio">
       {{#users}}
-      <div class="user">
         <img src={{avatar}}>
-        <a href="/user.mustache"><h1>{{name}}</h1></a>
-        <p>{{job}} {{company}}</p>
-      </div>
+        <h1>{{name}}</h1>
       {{/users}}
     </div>
-
-
-
   </body>
 </html>

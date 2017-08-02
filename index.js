@@ -16,6 +16,17 @@ app.get('/', function(req, res){
   res.render('home', data)
 });
 
+app.get('/', function(req, res){
+  for (var i = 0; i < data.users.length; i++) {
+    if(data.users[i].job === null){
+      data.users[i].job = "Available for hire";
+    }
+  }
+  res.render('home', {
+    users: data.users
+  })
+});
+
 app.get('/:user', function(req, res){
   let robot = req.params.user;
   for (var i = 0; i < data.users.length; i++) {

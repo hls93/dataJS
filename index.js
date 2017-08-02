@@ -17,8 +17,15 @@ app.get('/', function(req, res){
 });
 
 app.get('/:user', function(req, res){
-  req.render('user', data)
-})
+  let robot = req.params.user;
+  for (var i = 0; i < data.users.length; i++) {
+    if (data.users[i].username === robot) {
+      res.render('user', {
+        users: data.users[i]
+      });
+    }
+  }
+});
 
 
 app.listen(3000, function(){
